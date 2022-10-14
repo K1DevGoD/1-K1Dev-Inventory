@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory</title>
+
+
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./libs/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="./index.css">
+
+
+
+    <!-- JS -->
+
+    <script src="./libs/jquery.min.js" defer></script>
+
+    <script src="./libs/jquery-ui.min.js" defer></script>
+
+    <script src="./libs/notify.min.js" defer></script>
+
+    <script src="./app.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="wszystko">
+
+    <div id="app">
+
+        <div class="inventory" id="player">
+
+            <div class="inv-actions">
+
+                <div class="inv-actions-title">Item</div>
+
+                <div class="inv-actions-desc">No Description.</div>
+
+                <div class="wrapper">
+
+                    <div class="inv-button" id="use"><i class="fas fa-mouse-pointer" style="margin: 0 3px;"></i> ใช้</div>
+
+                    <input type="number" value="1" id="count">
+
+                    <div class="inv-button" id="drop"><i class="fas fa-arrow-alt-circle-down" style="margin: 0 3px;"></i> ทิ้ง</div>
+
+                    <div class="inv-button" id="removeHotbar">นำออกจาก Hotbar</div>
+
+                    <div class="inv-button" id="give">
+
+                        <span>ให้</span>  
+
+                    </div>
+
+                    <select name="" id="players"></select>
+
+                </div>
+
+            </div>
+
+            <div class="inv-title">inventory</div>
+
+            <div class="inv-data">
+
+                <div class="no-items"><i class="fas fa-exclamation-circle"></i> สินค้าคงคลังว่างเปล่า</div>
+
+                <div class="slots"></div>
+
+            </div>
+
+
+
+            <div class="inv-hotbar"></div>
+
+        </div>
+
+        <div class="inventory" id="other">
+
+            <div class="inv-title"></div>
+
+            <div class="inv-data">
+
+                <div class="no-items"><i class="fas fa-exclamation-circle"></i> สินค้าคงคลังว่างเปล่า</div>
+
+                <div class="slots"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <div id="hot">
+
+        <div class="inv-hotbar2"></div>
+
+    </div>
+
+</body>
+
+</html>

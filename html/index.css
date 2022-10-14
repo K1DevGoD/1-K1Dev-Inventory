@@ -1,0 +1,813 @@
+* {
+
+    margin: 0;
+
+
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    user-select: none;
+
+
+
+    /* aa */
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+
+
+@font-face {
+
+    font-family: harmonia;
+
+    src: url('assets/fonts/HarmoniaSansProCyr-Regular.ttf');
+
+  }
+
+  
+
+  @font-face {
+
+    font-family: harmonia-bold;
+
+    src: url('assets/fonts/HarmoniaSansProCyr-Bold.ttf');
+
+  }
+
+  
+
+  @font-face {
+
+    font-family: harmonia-light;
+
+    src: url('assets/fonts/HarmoniaSansProCyr-Light.ttf');
+
+  }
+
+
+
+::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+
+input::-webkit-outer-spin-button,
+
+input::-webkit-inner-spin-button {
+
+  -webkit-appearance: none;
+
+  margin: 0;
+
+}
+
+
+
+body {
+
+   
+
+    height: 100%;
+
+    font-family: harmonia;
+
+}
+
+.wszystko {
+
+    display: none;
+
+}
+
+
+
+
+
+
+
+#app {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.206);
+
+    overflow: hidden;
+
+}
+
+
+
+/* inventory */
+
+
+
+#other {
+
+    display: none;
+
+}
+
+
+
+.weightbar {
+
+    position: relative;
+
+    display: inline-block;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.73);
+
+    -webkit-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.73);
+
+    -moz-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.73);
+
+    margin: 5px 0 5px 0;
+
+    border-radius: 5px;
+
+    height: 25px;
+
+    width: 90%;
+
+}
+
+
+
+.weightfill {
+
+    position: absolute;
+
+    display: inline-block;
+
+    background-image: url(https://media.discordapp.net/attachments/961347091706314823/1029328238163546213/red.png);
+
+    border-radius: 5px;
+
+    height: 100%;
+
+    max-width: 100%;
+
+}
+
+
+
+.fa-weight-hanging {
+
+    color: rgba(114, 3, 3, 0.41);
+
+    position: absolute;
+
+    top: 3px;
+
+    right: -30px;
+
+}
+
+
+
+.inventory {
+
+    position: relative;
+
+    margin: 10px;
+
+    width: 655px;
+
+}
+
+
+
+.inv-title {
+
+   text-transform: uppercase;
+
+    font-family: harmonia-bold;
+
+    font-size: 18pt;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+.inv-data {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 500px;
+
+    padding: 5px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    border-radius: 5px;
+
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.9);
+
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.9);
+
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.9);
+
+    transition: 100ms;
+
+}
+
+
+
+
+
+
+
+.no-items {
+
+    display: none;
+
+    position: relative;
+
+    color: white;
+
+    font-weight: bolder;
+
+    font-size: 16pt;
+
+    opacity: 0.8;
+
+    padding: 20px;
+
+}
+
+
+
+.slots {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 125px);
+
+    gap: 5px;
+
+    width: fit-content;
+
+    height: fit-content;
+
+    overflow-y: auto;
+
+}
+
+
+
+.slot {
+
+    position: relative;
+
+    width: 125px;
+
+    height: 150px;
+
+    border-radius: 5px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    color: rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    transition: 100ms;
+
+}
+
+
+
+.slot2 {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 5px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    color: rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    transition: 100ms;
+
+}
+
+
+
+.slot:hover {
+
+    transform: scale(0.95);
+
+}
+
+
+
+.slot2:hover {
+
+    transform: scale(0.95);
+
+}
+
+
+
+.item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: relative;
+
+    width: 125px;
+
+    height: 150px;
+
+    text-transform: uppercase;
+
+    font-family: harmonia-bold;
+
+    font-size: 90%;
+
+    font-weight: 100;
+
+    color: white;
+
+    padding: 10px;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: 55%;
+
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.8));
+
+}
+
+
+
+
+
+
+
+
+
+.item-count {
+
+    position: absolute;
+
+    right: 7px; 
+
+    top: 5px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+.item-name {
+
+    position: absolute;
+
+    bottom: 1px;
+
+    text-align: center;
+
+    padding: 5px;
+
+}
+
+
+
+
+
+
+
+
+
+.item-keybind {
+
+    position: absolute;
+
+    left: 5px;
+
+    top: 5px;
+
+    padding: 5px 10px;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 120%;
+
+}
+
+
+
+
+
+
+
+.inv-hotbar {
+
+    margin-top: 3%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 125px);
+
+    gap: 5px;
+
+    padding: 5px;
+
+    
+
+}
+
+
+
+
+
+.inv-hotbar2 {
+
+    position: absolute;
+
+ display: grid;
+
+    grid-template-columns: repeat(5, 125px);
+
+    gap: 5px;
+
+    margin-top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 5px;
+
+}
+
+
+
+/* info and actions */
+
+
+
+.inv-actions {
+
+    display: none;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.inv-actions-title {
+
+    position: relative;
+
+    text-transform: uppercase;
+
+    font-weight: bolder;
+
+    font-size: 18pt;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+font-family: harmonia-bold;
+
+}
+
+
+
+.inv-actions-desc {
+
+    position: relative;
+
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+
+
+.inv-actions .wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    
+
+    width: 100%;
+
+    border-radius: 5px;
+
+    padding: 10px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+
+}
+
+
+
+#count {
+
+    outline: none;
+
+    border: none;
+
+    width: 100%;
+
+    font-size: 16pt;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+#use {
+
+    background-color: rgba(66, 136, 81, 0.685);
+
+    margin-right: 5px;
+
+    width: 100%;
+
+}
+
+
+
+#drop {
+
+    width: 100%;
+
+    margin-left: 5px;
+
+    background-color: rgba(114, 3, 3, 0.41);
+
+}
+
+
+
+#removeHotbar {
+
+    display: none;
+
+    width: 100%;
+
+    margin-left: 5px;
+
+    background-color: rgba(114, 3, 3, 0.41);
+
+}
+
+
+
+#give {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 10%;
+
+    margin-left: 5px;
+
+    background-color: rgba(211, 168, 48, 0.794); 
+
+}
+
+
+
+#players {
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    outline: none;
+
+    border: none;
+
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    font-size: 16pt;
+
+    margin-left: 5px;
+
+    color: white;
+
+}
+
+
+
+option {
+
+    color: black;
+
+}
+
+
+
+.inv-button {
+
+    width: 100%;
+
+    font-size: 16pt;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+    font-family: harmonia-bold;
+
+}
+
+
+
+.inv-button:hover {
+
+    filter: brightness(0.9);
+
+}
+
+
+
+/* dragging */
+
+.orginal {
+
+    opacity: 0.3;
+
+}
+
+
+
+.dragging .item-count {
+
+    display: none !important;
+
+}
+
+
+
+.dragging .item-name {
+
+    display: none !important;
+
+}
+
+
+
+.dragging .item-keybind {
+
+    display: none !important;
+
+}
+
+
+
+.active {
+
+    background-color: rgba(114, 3, 3, 0.41) !important;
+
+    background-size: 300% 400%;
+
+      animation: gradient 6s ease infinite;
+
+}
+
+
+
+.hover {
+
+    background-color: rgba(77, 77, 77, 0.3) !important;
+
+}
+
+
+
+
+
+
+
+@keyframes gradient {
+
+	0% {
+
+		background-position: 0% 50%;
+
+	}
+
+	50% {
+
+		background-position: 100% 50%;
+
+	}
+
+	100% {
+
+		background-position: 0% 50%;
+
+	}
+
+}
