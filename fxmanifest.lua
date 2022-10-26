@@ -11,7 +11,7 @@ games {'rdr3'}
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 author 'K1Dev'
-version '1.0'
+version '2.0'
 
 ui_page 'html/index.html'
 
